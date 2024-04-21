@@ -10,17 +10,26 @@ size_t statistic[SIZE];
 unsigned char image[SIZE];
 char PALETTE[] = " .:-=+*#%@@";
 
+
+
+/**
+ * Just a linear function of file size
+*/
+#define DEFAULT_TUNER 1000
+size_t getTuner(fpos_t fileSize) {
+    return fileSize / 700 + DEFAULT_TUNER;
+}
+
 /**
  * Amplification function:
  * f(x) = -(1 / (x / TUNER) + 1/255) + 255
  * 
  * Modified hyperbolic function to take any number and produce number less than or equal to 255
+ * 
+ * The bigger TUNER, the slower the function grows.
 */
-
-#define TUNER 1000
-
-unsigned char amplify(size_t x) {
-    return 255 - ((255 * TUNER) / (255 * x + TUNER));
+unsigned char amplify(size_t x, size_t tuner) {
+    return 255 - ((255 * tuner) / (255 * x + tuner));
 }
 
 
@@ -164,6 +173,7 @@ int main(int argc, char** argv) {
         return 1;
     }
 
+    size_t max = 0;
 
     int x = -1;
     int y = -1;
@@ -181,13 +191,22 @@ int main(int argc, char** argv) {
             statistic[y * WIDTH + x] += 1;
         }
 
+        if(statistic[y * WIDTH + x] > max) {
+            max = statistic[y * WIDTH + x];
+        }
+
         x = -1;
     }
     
+    fpos_t fileSize;
+    fgetpos(f, &fileSize);
+    size_t tuner = getTuner(fileSize);
+
     fclose(f);
 
     for(int i = 0; i < SIZE; i++) {
-        image[i] = 255 - amplify(statistic[i]);
+        // image[i] = 255 - amplify(statistic[i] * 255 / max);
+        image[i] = 255 - amplify(statistic[i], tuner);
     }
 
     if(args.outputFile) {
