@@ -29,8 +29,15 @@ Pepe picture converted into different formats and passed to **fprint**.
 | Format      | Print                                                                                           |
 |-------------|-------------------------------------------------------------------------------------------------|
 | **TXT**     | ![Text txt print](https://github.com/Astroner/c-file-print/blob/master/examples/text-txt.png)   |
-| **DOCX**    | ![Pepe docx print](https://github.com/Astroner/c-file-print/blob/master/examples/text-docx.png) |
+| **DOCX**    | ![Text docx print](https://github.com/Astroner/c-file-print/blob/master/examples/text-docx.png) |
 | **PDF**     | ![Text pdf print](https://github.com/Astroner/c-file-print/blob/master/examples/text-pdf.png)   |
 
 ### Video
-![Source video with a cat](https://www.youtube.com/watch?v=P2Rn_YYpmLg)
+![Source video with cats](https://www.youtube.com/watch?v=hCA0-imjoz0)
+
+| Format  | With sound                                                                                          | Without sound |
+|---------|-----------------------------------------------------------------------------------------------------|---------------|
+| **MP4** | ![Video with sound mp4](https://github.com/Astroner/c-file-print/blob/master/examples/cats-mp4.png) | ![Video without sound mp4](https://github.com/Astroner/c-file-print/blob/master/examples/cats-ns-mp4.png) |
+| **AVI** | ![Video with sound avi](https://github.com/Astroner/c-file-print/blob/master/examples/cats-avi.png) | ![Video without sound avi](https://github.com/Astroner/c-file-print/blob/master/examples/cats-ns-avi.png) |
+| **WEBM** | ![Video with sound webm](https://github.com/Astroner/c-file-print/blob/master/examples/webm-avi.png) | ![Video without sound webm](https://github.com/Astroner/c-file-print/blob/master/examples/webm-ns-avi.png) |
+| **MOV** | ![Video with sound mov](https://github.com/Astroner/c-file-print/blob/master/examples/cats-mov.png) | ![Video without sound mov](https://github.com/Astroner/c-file-print/blob/master/examples/cats-ns-mov.png) |
