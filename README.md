@@ -58,7 +58,7 @@ Pepe picture converted into different formats and passed to **fprint**.
 #### Comparison
 Both with sound
 
-| Format  | Cats | Wolf |
+| Format  | Long | Short |
 |---------|------|------|
 | **MP4** | ![Video with sound mp4](https://github.com/Astroner/c-file-print/blob/master/examples/cats-mp4.png) | ![Video with sound mp4](https://github.com/Astroner/c-file-print/blob/master/examples/wolf-mp4.png) |
 | **AVI** | ![Video with sound avi](https://github.com/Astroner/c-file-print/blob/master/examples/cats-avi.png) | ![Video with sound avi](https://github.com/Astroner/c-file-print/blob/master/examples/wolf-avi.png) |
