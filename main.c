@@ -173,8 +173,6 @@ int main(int argc, char** argv) {
         return 1;
     }
 
-    size_t max = 0;
-
     int x = -1;
     int y = -1;
 
@@ -191,10 +189,6 @@ int main(int argc, char** argv) {
             statistic[y * WIDTH + x] += 1;
         }
 
-        if(statistic[y * WIDTH + x] > max) {
-            max = statistic[y * WIDTH + x];
-        }
-
         x = -1;
     }
     
@@ -205,7 +199,6 @@ int main(int argc, char** argv) {
     fclose(f);
 
     for(int i = 0; i < SIZE; i++) {
-        // image[i] = 255 - amplify(statistic[i] * 255 / max);
         image[i] = 255 - amplify(statistic[i], tuner);
     }
 
