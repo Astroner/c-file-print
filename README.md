@@ -39,5 +39,5 @@ Pepe picture converted into different formats and passed to **fprint**.
 |---------|-----------------------------------------------------------------------------------------------------|---------------|
 | **MP4** | ![Video with sound mp4](https://github.com/Astroner/c-file-print/blob/master/examples/cats-mp4.png) | ![Video without sound mp4](https://github.com/Astroner/c-file-print/blob/master/examples/cats-ns-mp4.png) |
 | **AVI** | ![Video with sound avi](https://github.com/Astroner/c-file-print/blob/master/examples/cats-avi.png) | ![Video without sound avi](https://github.com/Astroner/c-file-print/blob/master/examples/cats-ns-avi.png) |
-| **WEBM** | ![Video with sound webm](https://github.com/Astroner/c-file-print/blob/master/examples/webm-avi.png) | ![Video without sound webm](https://github.com/Astroner/c-file-print/blob/master/examples/webm-ns-avi.png) |
+| **WEBM** | ![Video with sound webm](https://github.com/Astroner/c-file-print/blob/master/examples/cats-webm.png) | ![Video without sound webm](https://github.com/Astroner/c-file-print/blob/master/examples/cats-ns-webm.png) |
 | **MOV** | ![Video with sound mov](https://github.com/Astroner/c-file-print/blob/master/examples/cats-mov.png) | ![Video without sound mov](https://github.com/Astroner/c-file-print/blob/master/examples/cats-ns-mov.png) |
