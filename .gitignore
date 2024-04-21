@@ -1,0 +1,7 @@
+fprint
+.DS_Store
+.vscode
+*.o
+
+*.png
+!examples/*.png
