@@ -54,3 +54,13 @@ Pepe picture converted into different formats and passed to **fprint**.
 | **AVI** | ![Video with sound avi](https://github.com/Astroner/c-file-print/blob/master/examples/wolf-avi.png) | ![Video without sound avi](https://github.com/Astroner/c-file-print/blob/master/examples/wolf-ns-avi.png) |
 | **WEBM** | ![Video with sound webm](https://github.com/Astroner/c-file-print/blob/master/examples/wolf-webm.png) | ![Video without sound webm](https://github.com/Astroner/c-file-print/blob/master/examples/wolf-ns-webm.png) |
 | **MOV** | ![Video with sound mov](https://github.com/Astroner/c-file-print/blob/master/examples/wolf-mov.png) | ![Video without sound mov](https://github.com/Astroner/c-file-print/blob/master/examples/wolf-ns-mov.png) |
+
+#### Comparison
+Both with sound
+
+| Format  | Cats | Wolf |
+|---------|------|------|
+| **MP4** | ![Video with sound mp4](https://github.com/Astroner/c-file-print/blob/master/examples/cats-mp4.png) | ![Video with sound mp4](https://github.com/Astroner/c-file-print/blob/master/examples/wolf-mp4.png) |
+| **AVI** | ![Video with sound avi](https://github.com/Astroner/c-file-print/blob/master/examples/cats-avi.png) | ![Video with sound avi](https://github.com/Astroner/c-file-print/blob/master/examples/wolf-avi.png) |
+| **WEBM** | ![Video with sound webm](https://github.com/Astroner/c-file-print/blob/master/examples/cats-webm.png) | ![Video with sound webm](https://github.com/Astroner/c-file-print/blob/master/examples/wolf-webm.png) |
+| **MOV** | ![Video with sound mov](https://github.com/Astroner/c-file-print/blob/master/examples/cats-mov.png) | ![Video with sound mov](https://github.com/Astroner/c-file-print/blob/master/examples/wolf-mov.png) |
