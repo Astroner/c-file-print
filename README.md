@@ -11,4 +11,5 @@ Generally speaking, the tool goes through the file byte pairs and marks them on 
 Here we will take a source picture of Pepe and then convert it into different formats and take prints of them to see the difference.
 
 Source picture:
+
 ![Pepe source](https://github.com/Astroner/c-file-print/blob/master/examples/pepe.png)
