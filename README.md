@@ -33,7 +33,7 @@ Pepe picture converted into different formats and passed to **fprint**.
 | **PDF**     | ![Text pdf print](https://github.com/Astroner/c-file-print/blob/master/examples/text-pdf.png)   |
 
 ### Video
-![Source video with cats](https://www.youtube.com/watch?v=hCA0-imjoz0)
+[![Source video with cats](https://img.youtube.com/vi/hCA0-imjoz0/hqdefault.jpg)](https://www.youtube.com/watch?v=hCA0-imjoz0)
 
 | Format  | With sound                                                                                          | Without sound |
 |---------|-----------------------------------------------------------------------------------------------------|---------------|
