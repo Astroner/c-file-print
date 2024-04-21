@@ -26,8 +26,11 @@ Pepe picture converted into different formats and passed to **fprint**.
 ### Text
 [Romeo and Juliet Scene 1](https://shakespeare.mit.edu/romeo_juliet/romeo_juliet.1.1.html) in different formats
 
-| Format      | Print                                                                                          |
-|-------------|------------------------------------------------------------------------------------------------|
-| **TXT**     | ![Text txt print](https://github.com/Astroner/c-file-print/blob/master/examples/text-txt.png)  |
+| Format      | Print                                                                                           |
+|-------------|-------------------------------------------------------------------------------------------------|
+| **TXT**     | ![Text txt print](https://github.com/Astroner/c-file-print/blob/master/examples/text-txt.png)   |
 | **DOCX**    | ![Pepe docx print](https://github.com/Astroner/c-file-print/blob/master/examples/text-docx.png) |
-| **PDF**     | ![Text pdf print](https://github.com/Astroner/c-file-print/blob/master/examples/text-pdf.png)  |
+| **PDF**     | ![Text pdf print](https://github.com/Astroner/c-file-print/blob/master/examples/text-pdf.png)   |
+
+### Video
+![Source video with a cat](https://www.youtube.com/watch?v=P2Rn_YYpmLg)
