@@ -10,6 +10,13 @@ Generally speaking, the tool goes through the file byte pairs and marks them on 
 ### Images
 Here we will take a source picture of Pepe and then convert it into different formats and take prints of them to see the difference.
 
-Source picture:
+**Source picture:**
 
 ![Pepe source](https://github.com/Astroner/c-file-print/blob/master/examples/pepe.png)
+
+| Format     | Print                                                                                         |
+|------------|-----------------------------------------------------------------------------------------------|
+| **PNG**    | ![Pepe png print](https://github.com/Astroner/c-file-print/blob/master/examples/pepe-png.png) |
+| **JPG**    | ![Pepe png print](https://github.com/Astroner/c-file-print/blob/master/examples/pepe-jpg.png) |
+| **PPM**    | ![Pepe png print](https://github.com/Astroner/c-file-print/blob/master/examples/pepe-ppm.png) |
+| **BMP**    | ![Pepe png print](https://github.com/Astroner/c-file-print/blob/master/examples/pepe-bmp.png) |
