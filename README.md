@@ -7,6 +7,54 @@ To build the tool just run **make**
 ## Algorithm details
 Generally speaking, the tool goes through the file byte pairs and marks them on a 256x256 image using the pair as coordinates. The more frequent the pair, the brighter the corresponding pixel on the image. This simple algorithm generates unique pictures for each file format.
 
+## Usage
+```sh
+fprint [-p | -P [size]] [-o output.png] input.file
+```
+
+**Create file print**
+```sh
+fprint input.file
+```
+This command will generate *file-print.png* with the binary visualization if *input.file*
+
+**Flag -o specifies output file**:
+```sh
+fprint -o input.file.png input.file
+```
+Output file should have *.png* extension.
+
+**-p or -P flag prints the result in format of ascii art into the stdout**
+You can specify print size by adding **s, m or b** after the flag.
+
+**-P** disables file output.
+
+```sh
+fprint -p -o input.file.png input.file
+```
+
+Output:
+```txt
+Creating a print of 'Makefile'
+ASCII Print:
+|--  ==::    ::                  |
+|                                |
+|--  ##====--::                  |
+|    ::::::::::                  |
+|::  ==  **++                    |
+|    --  ++++                    |
+|::  --::    ==::                |
+|::  ::      --::                |
+|                                |
+|                                |
+|                                |
+|                                |
+|                                |
+|                                |
+|                                |
+|                                |
+```
+
 
 ## Examples
 ### Images

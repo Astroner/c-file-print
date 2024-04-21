@@ -48,7 +48,7 @@ int parseArgs(int argc, char** argv, struct Args* args) {
     }
 
     args->inputFile = NULL;
-    args->outputFile = "mark.png";
+    args->outputFile = "file-print.png";
     args->printIntoConsole = 0;
     args->printWidth = 16;
 
@@ -164,7 +164,7 @@ int main(int argc, char** argv) {
         return 1;
     }
 
-    printf("Creating a mark of '%s'\n", args.inputFile);
+    printf("Creating a print of '%s'\n", args.inputFile);
 
     FILE* f = fopen(args.inputFile, "rb");
 
@@ -217,7 +217,7 @@ int main(int argc, char** argv) {
 
     if(args.printIntoConsole) {
         int pixelPerChar = WIDTH / args.printWidth;
-        printf("Mark:\n");
+        printf("ASCII Print:\n");
         for(int row = 0; row < args.printWidth; row++) {
             printf("|");
             for(int col = 0; col < args.printWidth; col++) {
