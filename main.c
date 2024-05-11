@@ -110,7 +110,7 @@ int main(int argc, char** argv) {
                 printf(
                     "\n"
                     "This tool generates file binary visualization in form of Digraph Dot Plot View.\n"
-                    "fprint [-p | -P [size]][-o output.file] input-file-name\n"
+                    "fprint [-p | -P [size]][-o output.png] input-file-name\n"
                     "\n"
                     "Flags:\n"
                     "    -p, -P [size]  Print the plot in ascii art format into the stdout.\n"
