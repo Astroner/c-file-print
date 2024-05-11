@@ -3,6 +3,9 @@
 #define STB_IMAGE_WRITE_IMPLEMENTATION
 #include "stb_image_write.h"
 
+#define CAP_IMPLEMENTATION
+#include "cap.h"
+
 #define WIDTH 256
 #define SIZE (WIDTH * WIDTH)
 
@@ -32,7 +35,6 @@ unsigned char amplify(size_t x, size_t tuner) {
     return 255 - ((255 * tuner) / (255 * x + tuner));
 }
 
-
 struct Args { 
     char* inputFile; 
     char* outputFile;
@@ -40,91 +42,71 @@ struct Args {
     int printWidth;
 };
 
-int parseArgs(int argc, char** argv, struct Args* args) {
+int main(int argc, char** argv) {
     if(argc < 2) {
         printf("No input file provided\n");
 
         return 1;
     }
 
-    args->inputFile = NULL;
-    args->outputFile = "file-print.png";
-    args->printIntoConsole = 0;
-    args->printWidth = 16;
+    struct Args args = {
+        .inputFile = NULL,
+        .outputFile = "file-print.png",
+        .printIntoConsole = 0,
+        .printWidth = 16,
+    };
 
-    for(int i = 1; i < argc; i++) {
-        char* current = argv[i];
-
-        if(current[0] != '-') {
-            if(args->inputFile) {
-                printf("Unexpected argument '%s'\n", current);
+    CAP_PARSE_SWITCH(argc - 1, argv + 1) {
+        CAP_ARGS(inputFile, {
+            if(args.inputFile) {
+                printf("Unexpected argument '%s'\n", inputFile);
                 return 1;
             }
 
-            args->inputFile = current;
-
-            continue;
-        }
-
-        if(current[1] == '-') {
-            // Rejecting big flags for now;
-            printf("Unknown argument '%s'\n", current);
-            return 1;
-        }
-
-        if(current[2] != '\0') {
-            // Rejecting flags with length > 1
-            printf("Unknown argument '%s'\n", current);
-            return 1;
-        }
-
-        switch(current[1]) {
-            case 'o': // Specify output file
-                if(i + 1 >= argc) {
+            args.inputFile = inputFile;
+        })
+        CAP_FLAGS(
+            CAP_MATCH_FLAG('o', {
+                char* value = Cap_getFlagValue();
+                if(!value){
                     printf("No output file after -o");
                     return 1;
                 }
-                args->outputFile = argv[i + 1];
-                i++;
-                break;
 
-            case 'P': // Print into console and dont write file
-                #pragma GCC diagnostic ignored "-Wimplicit-fallthrough"
-                args->outputFile = NULL;
-            case 'p': // Print result into console
-                args->printIntoConsole = 1;
-
-                if(i + 1 >= argc) break;
-                char* nextArg = argv[i + 1];
-                if(nextArg[1] != '\0') break;
-
-                int size = 0;
-                switch(nextArg[0]) {
-                    case 's':
-                        size = 16;
-                        break;
-                    
-                    case 'm':
-                        size = 32;
-                        break;
-
-                    case 'b':
-                        size = 64;
-                        break;
-
-                    default:
-                        printf("Invalid value for print size '%c', valid ones: s, m, b\n", nextArg[0]);
-
-                        return 1;
-                        break;
+                args.outputFile = value;
+            })
+            CAP_ADD_FLAG_MATCH('P')
+            CAP_MATCH_FLAG('p', {
+                if(Cap_getCurrentFlag() == 'P') {
+                    args.outputFile = NULL;
                 }
-                i++;
+                args.printIntoConsole = 1;
 
-                args->printWidth = size;
+                CAP_CHECK_NEXT(optionalValue) {
+                    if(optionalValue.type == CAP_ARG && optionalValue.value.arg[1] == '\0') {
+                        switch(optionalValue.value.arg[0]) {
+                            case 's':
+                                args.printWidth = 16;
+                                break;
+                            
+                            case 'm':
+                                args.printWidth = 32;
+                                break;
 
-                break;
+                            case 'b':
+                                args.printWidth = 64;
+                                break;
 
-            case 'h':
+                            default:
+                                printf("Invalid value for print size '%c', valid ones: s, m, b\n", optionalValue.value.arg[0]);
+
+                                return 1;
+                        }
+                        CAP_CHECK_CONFIRM();
+                    }
+                }
+            })
+            CAP_MATCH_FLAG('h', {
                 printf(
                     "\n"
                     "This tool generates file binary visualization in form of Digraph Dot Plot View.\n"
@@ -138,29 +120,24 @@ int parseArgs(int argc, char** argv, struct Args* args) {
                     "                   Default: s\n"
                     "\n"
                     "              -o   Specifies output file. Provided name should be with .png extension.\n"
-                    "                   Default: mark.png\n"
+                    "                   Default: file-print.png\n"
                     "\n"
                 );
-                return 1;
 
-            default:
-                printf("Unknown argument '%s'\n", current);
+                return 0;
+            })
+            CAP_UNMATCHED_FLAGS(ch, {
+                printf("Unknown flag -%c\n", ch);
                 return 1;
-        }
+            })
+        )
+        CAP_LONG_FLAGS(
+            CAP_UNMATCHED_LFLAGS(name, printf("Unknown option --%s\n", name->str);)
+        )
     }
 
-    if(args->inputFile == NULL) {
+    if(args.inputFile == NULL) {
         printf("No input file provided\n");
-        return 1;
-    }
-
-    return 0;
-}
-
-int main(int argc, char** argv) {
-
-    struct Args args;
-    if(parseArgs(argc, argv, &args) != 0) {
         return 1;
     }
 
